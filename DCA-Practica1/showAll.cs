@@ -41,15 +41,15 @@ namespace DCA_Practica1
             if(Program.usuarioActual.admin)
             {
                 DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-                btn.HeaderText = "";
-                btn.Text = "Editar";
-                btn.UseColumnTextForButtonValue = true;
+                editar.HeaderText = "";
+                editar.Text = "Editar";
+                editar.UseColumnTextForButtonValue = true;
                 dataGridViewReportes.Columns.Add(editar);
 
                 DataGridViewButtonColumn borrar = new DataGridViewButtonColumn();
-                btn.HeaderText = "";
-                btn.Text = "Borrar";
-                btn.UseColumnTextForButtonValue = true;
+                borrar.HeaderText = "";
+                borrar.Text = "Borrar";
+                borrar.UseColumnTextForButtonValue = true;
                 dataGridViewReportes.Columns.Add(borrar);
             }
 

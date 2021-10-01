@@ -34,7 +34,6 @@ namespace DCA_Practica1
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewReportes = new System.Windows.Forms.DataGridView();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReportes)).BeginInit();
@@ -48,7 +47,7 @@ namespace DCA_Practica1
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 98);
+            this.panel1.Size = new System.Drawing.Size(917, 98);
             this.panel1.TabIndex = 3;
             // 
             // pictureLogo
@@ -66,7 +65,7 @@ namespace DCA_Practica1
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(668, 39);
+            this.button2.Location = new System.Drawing.Point(776, 39);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 29);
             this.button2.TabIndex = 1;
@@ -80,9 +79,9 @@ namespace DCA_Practica1
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(92, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(535, 45);
+            this.label1.Size = new System.Drawing.Size(479, 45);
             this.label1.TabIndex = 3;
-            this.label1.Text = "¡Te doy la bienvenida a Bug Hunter!";
+            this.label1.Text = "Lista de reportes de Bug Hunter";
             // 
             // dataGridViewReportes
             // 
@@ -97,23 +96,15 @@ namespace DCA_Practica1
             this.dataGridViewReportes.RowHeadersVisible = false;
             this.dataGridViewReportes.RowHeadersWidth = 51;
             this.dataGridViewReportes.RowTemplate.Height = 29;
-            this.dataGridViewReportes.Size = new System.Drawing.Size(750, 267);
+            this.dataGridViewReportes.Size = new System.Drawing.Size(893, 267);
             this.dataGridViewReportes.TabIndex = 5;
             this.dataGridViewReportes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(765, 171);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 267);
-            this.vScrollBar1.TabIndex = 6;
             // 
             // showAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.vScrollBar1);
+            this.ClientSize = new System.Drawing.Size(917, 450);
             this.Controls.Add(this.dataGridViewReportes);
             this.Controls.Add(this.panel1);
             this.Name = "showAll";
@@ -133,6 +124,5 @@ namespace DCA_Practica1
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewReportes;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

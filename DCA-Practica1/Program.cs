@@ -26,8 +26,8 @@ namespace DCA_Practica1
             // Creamos el usuario administrador al comienzo del programa
             Program.usuariosRegistrados.Add(new Usuario(0,"Admin", "admin@ua", "admin"));
 
-            Program.reportesRegistrados.Add(new Reporte("ReporteEjemplo", "Descripción", Tipo.Wishlist, Error.critical, usuariosRegistrados[0]));
-            Program.reportesRegistrados.Add(new Reporte("Fin del mundo", "La aplicación no funciona en linux", Tipo.Important, Error.grave, usuariosRegistrados[0]));
+            Program.reportesRegistrados.Add(new Reporte("ReporteEjemplo", "Descripción", Tipo.Sugerencia, Error.critico, usuariosRegistrados[0]));
+            Program.reportesRegistrados.Add(new Reporte("Fin del mundo", "La aplicación no funciona en linux", Tipo.Importante, Error.grave, usuariosRegistrados[0]));
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

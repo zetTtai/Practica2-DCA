@@ -8,16 +8,16 @@ namespace DCA_Practica1
 {
     enum Tipo
     {
-        Important,
+        Importante,
         Normal,
-        Minor,
-        Wishlist
+        Menor,
+        Sugerencia
     }
     enum Error
     {
-        critical,
+        critico,
         grave,
-        serious
+        serio
     }
     class Reporte
     {

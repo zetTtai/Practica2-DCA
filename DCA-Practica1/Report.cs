@@ -98,27 +98,27 @@ namespace DCA_Practica1
         private Tipo getTipoError()
         {
             if(radioButtonImportante.Checked)
-                return Tipo.Important;
+                return Tipo.Importante;
             if (radioButtonNormal.Checked)
                 return Tipo.Normal;
             if (radioButtonMenor.Checked)
-                return Tipo.Minor;
+                return Tipo.Menor;
             if (radioButtonSugerencia.Checked)
-                return Tipo.Wishlist;
+                return Tipo.Sugerencia;
             // Imposible
-            return Tipo.Important;
+            return Tipo.Importante;
         }
 
         private Error getGravedadError()
         {
             if (radioButtonCritico.Checked)
-                return Error.critical;
+                return Error.critico;
             if (radioButtonGrave.Checked)
                 return Error.grave;
             if (radioButtonSerio.Checked)
-                return Error.serious;
+                return Error.serio;
             //Imposible
-            return Error.critical;
+            return Error.serio;
         }
 
         private void LetsHunt_Click(object sender, EventArgs e)
