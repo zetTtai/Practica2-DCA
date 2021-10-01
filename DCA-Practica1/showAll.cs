@@ -86,7 +86,10 @@ namespace DCA_Practica1
         {
             if(e.ColumnIndex == 4)
             {
-                MessageBox.Show("Mostrar");
+                // MessageBox.Show("Mostrar");
+                DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
+                MostrarReporte mostrarReporte = new MostrarReporte(Convert.ToInt64(row.Cells[0].Value));
+                mostrarReporte.ShowDialog();
             }
             else if(e.ColumnIndex == 5)
             {

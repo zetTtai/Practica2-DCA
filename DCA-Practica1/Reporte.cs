@@ -15,9 +15,17 @@ namespace DCA_Practica1
     }
     enum Error
     {
-        critico,
-        grave,
-        serio
+        Critico,
+        Grave,
+        Serio
+    }
+    enum Estado
+    {
+        Pendiente,
+        Visto,
+        Arreglando,
+        Solucionado,
+        WONTFIX
     }
     class Reporte
     {
@@ -52,11 +60,11 @@ namespace DCA_Practica1
             get { return _error; }
             set { _error = value; }
         }
-        private bool _abierto;
-        public bool abierto
+        private Estado _estado;
+        public Estado estado
         {
-            get { return _abierto; }
-            set { _abierto = value; }
+            get { return _estado; }
+            set { _estado = value; }
         }
         private Usuario _reportador;
         public Usuario reportador
@@ -80,7 +88,7 @@ namespace DCA_Practica1
             this.error = error;
             this.reportador = reportador;
             this.comentarios = new List<Comentario>();
-            this.abierto = true;
+            this.estado = Estado.Pendiente;
         }
 
     }

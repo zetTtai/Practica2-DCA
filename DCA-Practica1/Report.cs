@@ -112,13 +112,13 @@ namespace DCA_Practica1
         private Error getGravedadError()
         {
             if (radioButtonCritico.Checked)
-                return Error.critico;
+                return Error.Critico;
             if (radioButtonGrave.Checked)
-                return Error.grave;
+                return Error.Grave;
             if (radioButtonSerio.Checked)
-                return Error.serio;
+                return Error.Serio;
             //Imposible
-            return Error.serio;
+            return Error.Serio;
         }
 
         private void LetsHunt_Click(object sender, EventArgs e)
