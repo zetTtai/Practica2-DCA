@@ -125,7 +125,9 @@ namespace DCA_Practica1
             if (nombreOK && emailOK && passwordOK)
             {
                 // Añadimos al usuario a nuestra lista de usuarios registrados
-                Program.usuariosRegistrados.Add(new Usuario(textNombre.Text, textEmail.Text, textPassword.Text));
+                Usuario usuario = new Usuario(textNombre.Text, textEmail.Text, textPassword.Text);
+                Program.usuariosRegistrados.Add(usuario);
+                Program.usuarioActual = usuario;
                 Home home = new Home();
                 this.Hide();
                 home.Show();

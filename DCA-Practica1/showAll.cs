@@ -15,23 +15,36 @@ namespace DCA_Practica1
         public showAll()
         {
             InitializeComponent();
-            DataTable dt = new DataTable();
-            DataColumn dc1 = new DataColumn("ID",typeof(long));
-            DataColumn dc2 = new DataColumn("Título", typeof(string));
-            DataColumn dc3 = new DataColumn("Tipo", typeof(Tipo));
-            DataColumn dc4 = new DataColumn("Gravedad", typeof(Error));
-            dt.Columns.Add(dc1);
-            dt.Columns.Add(dc2);
-            dt.Columns.Add(dc3);
-            dt.Columns.Add(dc4);
-            //dt.Rows.Add(txt_personalNo.Text, txt_name.Text, txt_date.Text, Convert.ToInt32(txt_quantity.Text), cmb_type.SelectedItem.ToString());
-            
-            foreach(Reporte reporte in Program.reportesRegistrados)
+
+            dataGridViewReportes.ColumnCount = 4;
+            dataGridViewReportes.Columns[0].Name = "ID";
+            dataGridViewReportes.Columns[1].Name = "Título";
+            dataGridViewReportes.Columns[2].Name = "Tipo";
+            dataGridViewReportes.Columns[3].Name = "Gravedad";
+
+            foreach (Reporte reporte in Program.reportesRegistrados)
             {
-                dt.Rows.Add(reporte.id, reporte.nombre, reporte.tipo, reporte.error);
+                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.tipo.ToString(), reporte.error.ToString()};
+                dataGridViewReportes.Rows.Add(row);
             }
 
-            dataGridViewReportes.DataSource = dt;
+            //DataTable dt = new DataTable();
+            //DataColumn dc1 = new DataColumn("ID",typeof(long));
+            //DataColumn dc2 = new DataColumn("Título", typeof(string));
+            //DataColumn dc3 = new DataColumn("Tipo", typeof(Tipo));
+            //DataColumn dc4 = new DataColumn("Gravedad", typeof(Error));
+            //dt.Columns.Add(dc1);
+            //dt.Columns.Add(dc2);
+            //dt.Columns.Add(dc3);
+            //dt.Columns.Add(dc4);
+            //dt.Rows.Add(txt_personalNo.Text, txt_name.Text, txt_date.Text, Convert.ToInt32(txt_quantity.Text), cmb_type.SelectedItem.ToString());
+
+            //foreach(Reporte reporte in Program.reportesRegistrados)
+            //{
+            //    dt.Rows.Add(reporte.id, reporte.nombre, reporte.tipo, reporte.error);
+            //}
+
+            //dataGridViewReportes.DataSource = dt;
 
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.HeaderText = "";
@@ -69,14 +82,20 @@ namespace DCA_Practica1
             this.Hide();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if(e.ColumnIndex == 4)
+            {
+                MessageBox.Show("Mostrar");
+            }
+            else if(e.ColumnIndex == 5)
+            {
+                MessageBox.Show("Editar");
+            }
+            else if(e.ColumnIndex == 6)
+            {
+                MessageBox.Show("Borrar");
+            }
         }
     }
 }

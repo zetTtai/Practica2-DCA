@@ -42,6 +42,7 @@ namespace DCA_Practica1
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
@@ -178,11 +179,22 @@ namespace DCA_Practica1
             this.label4.TabIndex = 3;
             this.label4.Text = "¡Te doy la bienvenida a Bug Hunter!";
             // 
+            // buttonClose
+            // 
+            this.buttonClose.Location = new System.Drawing.Point(307, 409);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(94, 29);
+            this.buttonClose.TabIndex = 11;
+            this.buttonClose.Text = "Salir";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.showPassword);
             this.Controls.Add(this.labelPassword);
@@ -220,6 +232,7 @@ namespace DCA_Practica1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureLogo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonClose;
     }
 }
 
