@@ -26,9 +26,9 @@ namespace DCA_Practica1
             }
             labelTitulo.Text = reporte.nombre;
             labelDesc.Text = reporte.desc;
-            labelTipo.Text = reporte.tipo.ToString();
-            labelGravedad.Text = reporte.error.ToString();
-            labelEstado.Text = reporte.estado.ToString();
+            labelTipo.Text = "Tipo de error: " + reporte.tipo.ToString();
+            labelGravedad.Text = "Gravedad del error: " + reporte.error.ToString();
+            labelEstado.Text = "ESTADO: " + reporte.estado.ToString();
             labelAutor.Text = reporte.reportador.nombre;
         }
 

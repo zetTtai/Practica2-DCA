@@ -30,9 +30,11 @@ namespace DCA_Practica1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelEstado = new System.Windows.Forms.Label();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.labelGravedad = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
+            this.labelTipo = new System.Windows.Forms.Label();
             this.labelAutor = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDesc = new System.Windows.Forms.Label();
@@ -41,9 +43,6 @@ namespace DCA_Practica1
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonComentar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelTipo = new System.Windows.Forms.Label();
-            this.labelGravedad = new System.Windows.Forms.Label();
-            this.labelEstado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,13 +52,25 @@ namespace DCA_Practica1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.labelEstado);
             this.panel1.Controls.Add(this.pictureLogo);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.labelGravedad);
             this.panel1.Controls.Add(this.labelTitulo);
+            this.panel1.Controls.Add(this.labelTipo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 98);
+            this.panel1.Size = new System.Drawing.Size(801, 111);
             this.panel1.TabIndex = 3;
+            // 
+            // labelEstado
+            // 
+            this.labelEstado.AutoSize = true;
+            this.labelEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEstado.Location = new System.Drawing.Point(495, 8);
+            this.labelEstado.Name = "labelEstado";
+            this.labelEstado.Size = new System.Drawing.Size(18, 28);
+            this.labelEstado.TabIndex = 11;
+            this.labelEstado.Text = " ";
             // 
             // pictureLogo
             // 
@@ -71,16 +82,15 @@ namespace DCA_Practica1
             this.pictureLogo.TabIndex = 10;
             this.pictureLogo.TabStop = false;
             // 
-            // button2
+            // labelGravedad
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(668, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cerrar sesión";
-            this.button2.UseVisualStyleBackColor = false;
+            this.labelGravedad.AutoSize = true;
+            this.labelGravedad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelGravedad.Location = new System.Drawing.Point(495, 75);
+            this.labelGravedad.Name = "labelGravedad";
+            this.labelGravedad.Size = new System.Drawing.Size(18, 28);
+            this.labelGravedad.TabIndex = 8;
+            this.labelGravedad.Text = " ";
             // 
             // labelTitulo
             // 
@@ -91,6 +101,16 @@ namespace DCA_Practica1
             this.labelTitulo.Size = new System.Drawing.Size(129, 45);
             this.labelTitulo.TabIndex = 3;
             this.labelTitulo.Text = "[Titulo]";
+            // 
+            // labelTipo
+            // 
+            this.labelTipo.AutoSize = true;
+            this.labelTipo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelTipo.Location = new System.Drawing.Point(495, 41);
+            this.labelTipo.Name = "labelTipo";
+            this.labelTipo.Size = new System.Drawing.Size(18, 28);
+            this.labelTipo.TabIndex = 7;
+            this.labelTipo.Text = " ";
             // 
             // labelAutor
             // 
@@ -163,52 +183,20 @@ namespace DCA_Practica1
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(3, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Comentarios";
-            // 
-            // labelTipo
-            // 
-            this.labelTipo.AutoSize = true;
-            this.labelTipo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTipo.Location = new System.Drawing.Point(212, 172);
-            this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(18, 28);
-            this.labelTipo.TabIndex = 7;
-            this.labelTipo.Text = " ";
-            // 
-            // labelGravedad
-            // 
-            this.labelGravedad.AutoSize = true;
-            this.labelGravedad.Font = new System.Drawing.Font("Segoe UI Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.labelGravedad.Location = new System.Drawing.Point(307, 172);
-            this.labelGravedad.Name = "labelGravedad";
-            this.labelGravedad.Size = new System.Drawing.Size(17, 28);
-            this.labelGravedad.TabIndex = 8;
-            this.labelGravedad.Text = " ";
-            // 
-            // labelEstado
-            // 
-            this.labelEstado.AutoSize = true;
-            this.labelEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelEstado.Location = new System.Drawing.Point(132, 172);
-            this.labelEstado.Name = "labelEstado";
-            this.labelEstado.Size = new System.Drawing.Size(18, 28);
-            this.labelEstado.TabIndex = 11;
-            this.labelEstado.Text = " ";
             // 
             // MostrarReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelEstado);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.labelGravedad);
-            this.Controls.Add(this.labelTipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelAutor);
@@ -231,7 +219,6 @@ namespace DCA_Practica1
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureLogo;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Label labelAutor;
         private System.Windows.Forms.Panel panel2;
