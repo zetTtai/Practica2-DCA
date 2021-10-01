@@ -153,9 +153,9 @@ namespace DCA_Practica1
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Location = new System.Drawing.Point(417, 172);
+            this.panel3.Location = new System.Drawing.Point(417, 178);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(371, 266);
+            this.panel3.Size = new System.Drawing.Size(371, 260);
             this.panel3.TabIndex = 9;
             // 
             // panel4

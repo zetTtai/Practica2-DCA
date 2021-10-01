@@ -93,12 +93,13 @@ namespace DCA_Practica1
             }
             else if(e.ColumnIndex == 5)
             {
-                MessageBox.Show("Editar");
+                // MessageBox.Show("Editar");
+                DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
+                EditarReporte editarReporte  = new EditarReporte(Convert.ToInt64(row.Cells[0].Value));
+                editarReporte.ShowDialog();
             }
             else if(e.ColumnIndex == 6)
-            {
-                MessageBox.Show("Borrar");
-            }
+                dataGridViewReportes.Rows.RemoveAt(e.RowIndex);
         }
     }
 }
