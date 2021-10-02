@@ -15,6 +15,9 @@ namespace DCA_Practica1
         public Inicio()
         {
             InitializeComponent();
+            // Create a TextBox control.
+            this.Controls.Add(textPassword);
+            textPassword.KeyPress += new KeyPressEventHandler(keypressed);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -111,6 +114,22 @@ namespace DCA_Practica1
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void keypressed(Object o, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                bool emailOK = checkEmail();
+                bool passwordOK = false;
+                if (emailOK) // Una vez el email es correcto
+                    passwordOK = checkPassword();
+                if (emailOK && passwordOK)
+                {
+                    Home home = new Home();
+                    this.Hide();
+                    home.Show();
+                }
+            }
         }
     }
 }

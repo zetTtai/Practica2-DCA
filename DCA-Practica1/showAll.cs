@@ -16,36 +16,18 @@ namespace DCA_Practica1
         {
             InitializeComponent();
 
-            dataGridViewReportes.ColumnCount = 4;
+            dataGridViewReportes.ColumnCount = 5;
             dataGridViewReportes.Columns[0].Name = "ID";
             dataGridViewReportes.Columns[1].Name = "Título";
-            dataGridViewReportes.Columns[2].Name = "Tipo";
-            dataGridViewReportes.Columns[3].Name = "Gravedad";
+            dataGridViewReportes.Columns[2].Name = "Estado";
+            dataGridViewReportes.Columns[3].Name = "Tipo";
+            dataGridViewReportes.Columns[4].Name = "Gravedad";
 
             foreach (Reporte reporte in Program.reportesRegistrados)
             {
-                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.tipo.ToString(), reporte.error.ToString()};
+                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.estado.ToString(), reporte.tipo.ToString(), reporte.error.ToString()};
                 dataGridViewReportes.Rows.Add(row);
             }
-
-            //DataTable dt = new DataTable();
-            //DataColumn dc1 = new DataColumn("ID",typeof(long));
-            //DataColumn dc2 = new DataColumn("Título", typeof(string));
-            //DataColumn dc3 = new DataColumn("Tipo", typeof(Tipo));
-            //DataColumn dc4 = new DataColumn("Gravedad", typeof(Error));
-            //dt.Columns.Add(dc1);
-            //dt.Columns.Add(dc2);
-            //dt.Columns.Add(dc3);
-            //dt.Columns.Add(dc4);
-            //dt.Rows.Add(txt_personalNo.Text, txt_name.Text, txt_date.Text, Convert.ToInt32(txt_quantity.Text), cmb_type.SelectedItem.ToString());
-
-            //foreach(Reporte reporte in Program.reportesRegistrados)
-            //{
-            //    dt.Rows.Add(reporte.id, reporte.nombre, reporte.tipo, reporte.error);
-            //}
-
-            //dataGridViewReportes.DataSource = dt;
-
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.HeaderText = "";
             btn.Text = "Mostrar";
@@ -84,22 +66,40 @@ namespace DCA_Practica1
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 4)
+            if(e.ColumnIndex == 5)
             {
                 // MessageBox.Show("Mostrar");
                 DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
                 MostrarReporte mostrarReporte = new MostrarReporte(Convert.ToInt64(row.Cells[0].Value));
                 mostrarReporte.ShowDialog();
             }
-            else if(e.ColumnIndex == 5)
+            else if(e.ColumnIndex == 6)
             {
                 // MessageBox.Show("Editar");
                 DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
                 EditarReporte editarReporte  = new EditarReporte(Convert.ToInt64(row.Cells[0].Value));
                 editarReporte.ShowDialog();
             }
-            else if(e.ColumnIndex == 6)
-                dataGridViewReportes.Rows.RemoveAt(e.RowIndex);
+            else if(e.ColumnIndex == 7)
+            {
+                DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
+                foreach (Reporte reporte in Program.reportesRegistrados)
+                {
+                    if (reporte.id == Convert.ToInt64(row.Cells[0].Value))
+                    {
+                        Program.reportesRegistrados.Remove(reporte);
+                        dataGridViewReportes.Rows.RemoveAt(e.RowIndex);
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            showAll show = new showAll();
+            show.Show();
+            this.Hide();
         }
     }
 }

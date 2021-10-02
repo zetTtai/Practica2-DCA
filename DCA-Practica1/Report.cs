@@ -36,13 +36,13 @@ namespace DCA_Practica1
             // Comprobamos que 'Nombre' NO está vacío.
             if (textNombre.Text != "")
             {
-                if (textNombre.Text.Length >= 2 && textNombre.Text.Length <= 20)
+                if (textNombre.Text.Length >= 2 && textNombre.Text.Length <= 15)
                 {
                     labelNombre.Text = " ";
                     return true;
                 }
                 else
-                    labelNombre.Text = "Debe tener entre 2 y 20 caracteres";
+                    labelNombre.Text = "Debe tener entre 2 y 15 caracteres";
             }
             else
                 labelNombre.Text = "Este campo no puede estar vacío";
@@ -54,13 +54,13 @@ namespace DCA_Practica1
             // Comprobamos que 'Nombre' NO está vacío.
             if (richTextDesc.Text != "")
             {
-                if (richTextDesc.Text.Length <= 20)
+                if (richTextDesc.Text.Length <= 255)
                 {
                     labelDesc.Text = " ";
                     return true;
                 }
                 else
-                    labelDesc.Text = "Debe tener entre 2 y 20 caracteres";
+                    labelDesc.Text = "Debe ser menor a 255 caracteres.";
             }
             else
                 labelDesc.Text = "Este campo no puede estar vacío";

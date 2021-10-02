@@ -34,6 +34,9 @@ namespace DCA_Practica1
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewReportes = new System.Windows.Forms.DataGridView();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.textBoxTitulo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReportes)).BeginInit();
@@ -65,7 +68,7 @@ namespace DCA_Practica1
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(776, 39);
+            this.button2.Location = new System.Drawing.Point(647, 39);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 29);
             this.button2.TabIndex = 1;
@@ -93,18 +96,48 @@ namespace DCA_Practica1
             this.dataGridViewReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReportes.Location = new System.Drawing.Point(12, 171);
             this.dataGridViewReportes.Name = "dataGridViewReportes";
+            this.dataGridViewReportes.ReadOnly = true;
             this.dataGridViewReportes.RowHeadersVisible = false;
             this.dataGridViewReportes.RowHeadersWidth = 51;
             this.dataGridViewReportes.RowTemplate.Height = 29;
-            this.dataGridViewReportes.Size = new System.Drawing.Size(893, 267);
+            this.dataGridViewReportes.Size = new System.Drawing.Size(756, 267);
             this.dataGridViewReportes.TabIndex = 5;
             this.dataGridViewReportes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(11, 142);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(94, 29);
+            this.buttonRefresh.TabIndex = 6;
+            this.buttonRefresh.Text = "Refrescar";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(111, 142);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscar.TabIndex = 7;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            // 
+            // textBoxTitulo
+            // 
+            this.textBoxTitulo.Location = new System.Drawing.Point(201, 143);
+            this.textBoxTitulo.Name = "textBoxTitulo";
+            this.textBoxTitulo.Size = new System.Drawing.Size(249, 27);
+            this.textBoxTitulo.TabIndex = 8;
             // 
             // showAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 450);
+            this.ClientSize = new System.Drawing.Size(776, 450);
+            this.Controls.Add(this.textBoxTitulo);
+            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.dataGridViewReportes);
             this.Controls.Add(this.panel1);
             this.Name = "showAll";
@@ -114,6 +147,7 @@ namespace DCA_Practica1
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReportes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -124,5 +158,8 @@ namespace DCA_Practica1
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewReportes;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.TextBox textBoxTitulo;
     }
 }

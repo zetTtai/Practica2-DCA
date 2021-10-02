@@ -83,7 +83,6 @@ namespace DCA_Practica1
             this.label2.Size = new System.Drawing.Size(137, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Correo electrónico";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -94,7 +93,6 @@ namespace DCA_Practica1
             this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Contraseña";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button1
             // 
