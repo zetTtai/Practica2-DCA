@@ -15,32 +15,6 @@ namespace DCA_Practica1
         public Perfil()
         {
             InitializeComponent();
-            textNombre.Text = Program.usuarioActual.nombre;
-            textEmail.Text = Program.usuarioActual.email;
-            textPassword.Text = Program.usuarioActual.password;
-
-            dataGridViewReportes.ColumnCount = 5;
-            dataGridViewReportes.Columns[0].Name = "ID";
-            dataGridViewReportes.Columns[1].Name = "Título";
-            dataGridViewReportes.Columns[2].Name = "Estado";
-            dataGridViewReportes.Columns[3].Name = "Tipo";
-            dataGridViewReportes.Columns[4].Name = "Gravedad";
-
-            foreach (Reporte reporte in Program.usuarioActual.reportes)
-            {
-                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.estado.ToString(), reporte.tipo.ToString(), reporte.error.ToString() };
-                dataGridViewReportes.Rows.Add(row);
-            }
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.HeaderText = "";
-            btn.Text = "Mostrar";
-            btn.UseColumnTextForButtonValue = true;
-            dataGridViewReportes.Columns.Add(btn);
-            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-            editar.HeaderText = "";
-            editar.Text = "Editar";
-            editar.UseColumnTextForButtonValue = true;
-            dataGridViewReportes.Columns.Add(editar);
         }
 
         private void pictureLogo_Click(object sender, EventArgs e)
@@ -125,9 +99,6 @@ namespace DCA_Practica1
 
             if (nombreOK && passwordOK)
             {
-                // Actualizamos al usuario a nuestra lista de usuarios registrados
-                // Usuario usuario = new Usuario(textNombre.Text, textEmail.Text, textPassword.Text);
-                // Program.usuariosRegistrados.Add(usuario);
                 foreach (Usuario usuario in Program.usuariosRegistrados)
                 {
                     if(usuario.id == Program.usuarioActual.id)
@@ -138,9 +109,8 @@ namespace DCA_Practica1
                         break;
                     }
                 }
-                Perfil home = new Perfil();
-                this.Hide();
-                home.Show();
+                MessageBox.Show("Cambios realizados correctamente");
+                this.Perfil_Load(null, null);
             }
         }
 
@@ -149,6 +119,11 @@ namespace DCA_Practica1
             Inicio inicio = new Inicio();
             inicio.Show();
             this.Hide();
+        }
+
+        public void Frescura()
+        {
+            this.Perfil_Load(null, null);
         }
 
         private void dataGridViewReportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -165,8 +140,42 @@ namespace DCA_Practica1
                 // MessageBox.Show("Editar");
                 DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
                 EditarReportePerfil editarReporte = new EditarReportePerfil(Convert.ToInt64(row.Cells[0].Value));
+                editarReporte.Refrescar += Frescura;
                 editarReporte.ShowDialog();
             }
+        }
+
+        private void Perfil_Load(object sender, EventArgs e)
+        {
+            textNombre.Text = Program.usuarioActual.nombre;
+            textEmail.Text = Program.usuarioActual.email;
+            textPassword.Text = Program.usuarioActual.password;
+            textPasswordConfirm.Text = "";
+
+            dataGridViewReportes.Rows.Clear();
+
+            dataGridViewReportes.ColumnCount = 5;
+            dataGridViewReportes.Columns[0].Name = "ID";
+            dataGridViewReportes.Columns[1].Name = "Título";
+            dataGridViewReportes.Columns[2].Name = "Estado";
+            dataGridViewReportes.Columns[3].Name = "Tipo";
+            dataGridViewReportes.Columns[4].Name = "Gravedad";
+
+            foreach (Reporte reporte in Program.usuarioActual.reportes)
+            {
+                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.estado.ToString(), reporte.tipo.ToString(), reporte.error.ToString() };
+                dataGridViewReportes.Rows.Add(row);
+            }
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "";
+            btn.Text = "Mostrar";
+            btn.UseColumnTextForButtonValue = true;
+            dataGridViewReportes.Columns.Add(btn);
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "";
+            editar.Text = "Editar";
+            editar.UseColumnTextForButtonValue = true;
+            dataGridViewReportes.Columns.Add(editar);
         }
     }
 }

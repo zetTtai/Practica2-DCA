@@ -12,6 +12,8 @@ namespace DCA_Practica1
 {
     public partial class EditarReportePerfil : Form
     {
+        public event Action Refrescar;
+
         long idActual = 0;
         public EditarReportePerfil(long id)
         {
@@ -180,12 +182,10 @@ namespace DCA_Practica1
                         updateList(usuario.reportes);
                         updateList(Program.reportesRegistrados);
                         break;
-                        // usuario.storageReport(reporte);
-                        // Hace falta?
-                        // Program.usuarioActual = usuario; // Actualizamos el usuario actual con la nueva información
                     }
                 }
                 this.Hide();
+                Refrescar();
             }
         }
     }
