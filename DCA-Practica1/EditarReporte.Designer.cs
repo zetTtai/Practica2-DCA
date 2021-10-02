@@ -59,7 +59,7 @@ namespace DCA_Practica1
             // 
             // pictureLogo
             // 
-            this.pictureLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureLogo.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureLogo.Image = global::DCA_Practica1.Properties.Resources.Sin_nombre;
             this.pictureLogo.Location = new System.Drawing.Point(12, 13);
             this.pictureLogo.Name = "pictureLogo";

@@ -106,6 +106,7 @@ namespace DCA_Practica1
             // 
             // buttonRefresh
             // 
+            this.buttonRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRefresh.Location = new System.Drawing.Point(11, 142);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(94, 29);
@@ -116,6 +117,7 @@ namespace DCA_Practica1
             // 
             // buttonBuscar
             // 
+            this.buttonBuscar.Cursor = System.Windows.Forms.Cursors.No;
             this.buttonBuscar.Location = new System.Drawing.Point(111, 142);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
