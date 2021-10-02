@@ -26,7 +26,7 @@ Una vez iniciado sesión se mostrarán tres opciones:
 
 1. Notificar un error
 2. Buscar errores
-3. Mi cuenta (No disponible)
+3. Mi cuenta
 
 Además de tener la oportunidad de **cerrar sesión** para cambiar de cuenta en cualquier momento y volver a la página principal **clickando en el logo** situado en la esquina superior izquierda.
 
@@ -37,8 +37,6 @@ Clickando sobre la imagen de Notificar un error aparecerá un formulario en el q
 Todos los reportes realizados por el usuario tendrán como estado el estado **pendiente**.
 
 Además de tener un apartado en el que da la opción de comentar sobre el reporte que se muestra en ese momento. 
-
-(no disponible por el momento)
 
 ## Buscar errores
 Clickando sobre la imagen de Buscar errores el usuario podrá ver un listado de todos los reportes registrados en la aplicación.
@@ -54,6 +52,16 @@ Los distintos estados son:
 `Pendiente, Visto, Arreglando Solucionado y WONTFIX`
 
 Por último, la opción de **Borrar** directamente borra el reporte del DataGridView, de la lista de reportesRegistrados y de la lista del usuario que publicó el reporte.
+
+## Mi perfil
+
+En este apartado el usuario podrá cambiar sus datos personales, por el momento los únicos datos que se pueden cambiar es su **nombre** de usario y **contraseña**.
+
+El **email no se puede cambiar** ya que en el registro se valida que un email sea único.
+
+Además el usuario tendrá acceso a los reportes que ha realizado donde puede ver todo lo que se errores pero filtrado por su ID, además de **modificar todos los campos de un Reporte excepto el Estado**.
+
+Un admin tampoco puede cambiar el estado de un reporte que ha realizado desde su perfil, tiene que hacerlo desde el editar que le aparece en **Buscar errores**.
 
 
 

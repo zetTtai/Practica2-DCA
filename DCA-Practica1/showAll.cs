@@ -65,11 +65,6 @@ namespace DCA_Practica1
             }
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            this.showAll_Load(sender, e);
-        }
-
         public void Frescura()
         {
             this.showAll_Load(null, null);

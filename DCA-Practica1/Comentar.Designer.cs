@@ -1,7 +1,7 @@
 ﻿
 namespace DCA_Practica1
 {
-    partial class MostrarReporte
+    partial class Comentar
     {
         /// <summary>
         /// Required designer variable.
@@ -35,18 +35,13 @@ namespace DCA_Practica1
             this.labelGravedad = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelTipo = new System.Windows.Forms.Label();
-            this.labelAutor = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.labelDesc = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.richTextBoxMsg = new System.Windows.Forms.RichTextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelComentarios = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonComentar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelMensaje = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,10 +52,10 @@ namespace DCA_Practica1
             this.panel1.Controls.Add(this.labelGravedad);
             this.panel1.Controls.Add(this.labelTitulo);
             this.panel1.Controls.Add(this.labelTipo);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 111);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(597, 111);
+            this.panel1.TabIndex = 4;
             // 
             // labelEstado
             // 
@@ -96,7 +91,7 @@ namespace DCA_Practica1
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTitulo.Location = new System.Drawing.Point(92, 23);
+            this.labelTitulo.Location = new System.Drawing.Point(92, 13);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(129, 45);
             this.labelTitulo.TabIndex = 3;
@@ -112,109 +107,76 @@ namespace DCA_Practica1
             this.labelTipo.TabIndex = 7;
             this.labelTipo.Text = " ";
             // 
-            // labelAutor
+            // button1
             // 
-            this.labelAutor.AutoSize = true;
-            this.labelAutor.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAutor.Location = new System.Drawing.Point(12, 138);
-            this.labelAutor.Name = "labelAutor";
-            this.labelAutor.Size = new System.Drawing.Size(92, 31);
-            this.labelAutor.TabIndex = 4;
-            this.labelAutor.Text = "[Autor]";
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(423, 153);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 29);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Enviar comentario";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Send_Click);
             // 
-            // panel2
+            // richTextBoxMsg
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.labelDesc);
-            this.panel2.Location = new System.Drawing.Point(12, 203);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(385, 235);
-            this.panel2.TabIndex = 5;
+            this.richTextBoxMsg.Location = new System.Drawing.Point(13, 153);
+            this.richTextBoxMsg.Name = "richTextBoxMsg";
+            this.richTextBoxMsg.Size = new System.Drawing.Size(360, 105);
+            this.richTextBoxMsg.TabIndex = 6;
+            this.richTextBoxMsg.Text = "";
             // 
-            // labelDesc
+            // button2
             // 
-            this.labelDesc.AutoSize = true;
-            this.labelDesc.Location = new System.Drawing.Point(12, 20);
-            this.labelDesc.Name = "labelDesc";
-            this.labelDesc.Size = new System.Drawing.Size(97, 20);
-            this.labelDesc.TabIndex = 7;
-            this.labelDesc.Text = "[Descripción]";
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Location = new System.Drawing.Point(423, 229);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 29);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Back_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 172);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(13, 130);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 28);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Descripción";
+            this.label1.Size = new System.Drawing.Size(196, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Escriba aquí su comentario";
             // 
-            // panelComentarios
+            // labelMensaje
             // 
-            this.panelComentarios.AutoScroll = true;
-            this.panelComentarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelComentarios.Location = new System.Drawing.Point(417, 178);
-            this.panelComentarios.Name = "panelComentarios";
-            this.panelComentarios.Size = new System.Drawing.Size(371, 260);
-            this.panelComentarios.TabIndex = 9;
+            this.labelMensaje.AutoSize = true;
+            this.labelMensaje.ForeColor = System.Drawing.Color.Red;
+            this.labelMensaje.Location = new System.Drawing.Point(13, 261);
+            this.labelMensaje.Name = "labelMensaje";
+            this.labelMensaje.Size = new System.Drawing.Size(13, 20);
+            this.labelMensaje.TabIndex = 9;
+            this.labelMensaje.Text = " ";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel4.Controls.Add(this.buttonComentar);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(417, 138);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(371, 41);
-            this.panel4.TabIndex = 10;
-            // 
-            // buttonComentar
-            // 
-            this.buttonComentar.BackColor = System.Drawing.Color.OliveDrab;
-            this.buttonComentar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonComentar.Location = new System.Drawing.Point(335, 5);
-            this.buttonComentar.Name = "buttonComentar";
-            this.buttonComentar.Size = new System.Drawing.Size(33, 29);
-            this.buttonComentar.TabIndex = 11;
-            this.buttonComentar.Text = "+";
-            this.buttonComentar.UseVisualStyleBackColor = false;
-            this.buttonComentar.Click += new System.EventHandler(this.buttonComentar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Comentarios";
-            // 
-            // MostrarReporte
+            // Comentar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panelComentarios);
+            this.ClientSize = new System.Drawing.Size(593, 291);
+            this.Controls.Add(this.labelMensaje);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.labelAutor);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.richTextBoxMsg);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "MostrarReporte";
+            this.Name = "Comentar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Hunter";
-            this.Load += new System.EventHandler(this.MostrarReporte_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,18 +185,15 @@ namespace DCA_Practica1
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureLogo;
-        private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.Label labelAutor;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelDesc;
-        private System.Windows.Forms.Panel panelComentarios;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonComentar;
-        private System.Windows.Forms.Label labelTipo;
-        private System.Windows.Forms.Label labelGravedad;
         private System.Windows.Forms.Label labelEstado;
+        private System.Windows.Forms.PictureBox pictureLogo;
+        private System.Windows.Forms.Label labelGravedad;
+        private System.Windows.Forms.Label labelTitulo;
+        private System.Windows.Forms.Label labelTipo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox richTextBoxMsg;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelMensaje;
     }
 }

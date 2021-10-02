@@ -33,18 +33,22 @@ namespace DCA_Practica1
             get { return _autor; }
             set { _autor = value; }
         }
-        private List<Comentario> _respuestas;
-        public List<Comentario> respuestas
+
+        public Comentario(Usuario autor, Reporte reporte, string mensaje)
         {
-            get { return _respuestas; }
-            set { _respuestas = value; }
-        }
-        private Comentario _responde; // Comentario al que responde
-        public Comentario responde
-        {
-            get { return _responde; }
-            set { _responde = value; }
+            this.id = lastID + 1;
+            lastID++;
+            this.autor = autor;
+            this.reporte = reporte;
+            this.mensaje = mensaje;
         }
 
+        override public string ToString()
+        {
+            string formato = "[" + this.autor.nombre + "] (" + this.autor.email + ")\n";
+            formato += this.mensaje + "\n";
+            formato += "-------------------------------------------------------";
+            return formato;
+        }
     }
 }

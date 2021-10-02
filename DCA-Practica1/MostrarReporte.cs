@@ -12,9 +12,11 @@ namespace DCA_Practica1
 {
     public partial class MostrarReporte : Form
     {
+        long idActual= 0;
         public MostrarReporte(long id)
         {
             InitializeComponent();
+            idActual = id;
             Reporte reporte = null;
             foreach(Reporte report in Program.reportesRegistrados)
             {
@@ -34,27 +36,54 @@ namespace DCA_Practica1
 
         private void buttonComentar_Click(object sender, EventArgs e)
         {
+            Comentar comentar = new Comentar(idActual);
+            comentar.Refrescar += Frescura;
+            comentar.ShowDialog();
+        }
 
+        public void Frescura()
+        {
+            this.MostrarReporte_Load(null, null);
         }
 
         private void MostrarReporte_Load(object sender, EventArgs e)
         {
-            Label aux = new Label
+            panelComentarios.Controls.Clear(); // Eliminamos los antiguos comentarios
+            foreach (Reporte reporte in Program.reportesRegistrados)
             {
-                Text = "Hola mundo",
-                Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
-                AutoSize = true,
-                Location = new Point(10, 25 * panelComentarios.Controls.Count)
-            };
-            panelComentarios.Controls.Add(aux);
-            Label aux2 = new Label
-            {
-                Text = "Mundo: hola",
-                Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
-                AutoSize = true,
-                Location = new Point(10, 25 * panelComentarios.Controls.Count)
-            };
-            panelComentarios.Controls.Add(aux2);
+                if (reporte.id == idActual)
+                {
+                    foreach(Comentario comentario in reporte.comentarios)
+                    {
+                        Label msg = new Label
+                        {
+                            Text = comentario.ToString(),
+                            Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
+                            AutoSize = true,
+                            Location = new Point(10, 75 * panelComentarios.Controls.Count)
+                        };
+                        panelComentarios.Controls.Add(msg);
+                    }
+                    break;
+                }
+            }
+            //Comentario comment = new Comentario(Program.usuarioActual, reporte, "Hola, buenos días");
+            //Label comentario = new Label
+            //{
+            //    Text = comment.ToString(),
+            //    Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
+            //    AutoSize = true,
+            //    Location = new Point(10, 25 * panelComentarios.Controls.Count)
+            //};
+            //panelComentarios.Controls.Add(comentario);
+            //Label aux2 = new Label
+            //{
+            //    Text = "Mundo: hola",
+            //    Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
+            //    AutoSize = true,
+            //    Location = new Point(10, 25 * panelComentarios.Controls.Count)
+            //};
+            //panelComentarios.Controls.Add(aux2);
         }
     }
 }
