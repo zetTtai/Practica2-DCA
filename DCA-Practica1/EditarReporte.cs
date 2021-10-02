@@ -12,6 +12,8 @@ namespace DCA_Practica1
 {
     public partial class EditarReporte : Form
     {
+        public event Action Refrescar;
+
         long idReporte = 0;
         public EditarReporte(long id)
         {
@@ -47,7 +49,6 @@ namespace DCA_Practica1
 
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Confirmo cambio a " + comboBoxEstado.SelectedItem.ToString());
             foreach (Reporte reporte in Program.reportesRegistrados)
             {
                 if (reporte.id == idReporte)
@@ -76,6 +77,8 @@ namespace DCA_Practica1
                 }
             }
             this.Hide();
+            Refrescar();
         }
+
     }
 }

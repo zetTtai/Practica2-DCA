@@ -39,7 +39,7 @@ namespace DCA_Practica1
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDesc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelComentarios = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonComentar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -150,13 +150,13 @@ namespace DCA_Practica1
             this.label1.TabIndex = 6;
             this.label1.Text = "Descripción";
             // 
-            // panel3
+            // panelComentarios
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Location = new System.Drawing.Point(417, 178);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(371, 260);
-            this.panel3.TabIndex = 9;
+            this.panelComentarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelComentarios.Location = new System.Drawing.Point(417, 178);
+            this.panelComentarios.Name = "panelComentarios";
+            this.panelComentarios.Size = new System.Drawing.Size(371, 260);
+            this.panelComentarios.TabIndex = 9;
             // 
             // panel4
             // 
@@ -171,7 +171,7 @@ namespace DCA_Practica1
             // buttonComentar
             // 
             this.buttonComentar.BackColor = System.Drawing.Color.OliveDrab;
-            this.buttonComentar.Cursor = System.Windows.Forms.Cursors.No;
+            this.buttonComentar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonComentar.Location = new System.Drawing.Point(335, 5);
             this.buttonComentar.Name = "buttonComentar";
             this.buttonComentar.Size = new System.Drawing.Size(33, 29);
@@ -196,13 +196,17 @@ namespace DCA_Practica1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelComentarios);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelAutor);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "MostrarReporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Hunter";
+            this.Load += new System.EventHandler(this.MostrarReporte_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
@@ -224,7 +228,7 @@ namespace DCA_Practica1
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelDesc;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelComentarios;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonComentar;

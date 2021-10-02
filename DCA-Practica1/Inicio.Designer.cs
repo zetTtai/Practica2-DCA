@@ -204,7 +204,10 @@ namespace DCA_Practica1
             this.Controls.Add(this.textPassword);
             this.Controls.Add(this.textEmail);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Hunter";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.panel1.ResumeLayout(false);

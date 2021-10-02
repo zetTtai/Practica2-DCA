@@ -22,3 +22,6 @@ C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Release\net5.0-wi
 C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Release\net5.0-windows\ref\DCA-Practica1.dll
 C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Release\net5.0-windows\DCA-Practica1.pdb
 C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Release\net5.0-windows\DCA-Practica1.genruntimeconfig.cache
+C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Release\net5.0-windows\DCA-Practica1.csproj.AssemblyReference.cache
+C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Release\net5.0-windows\DCA_Practica1.EditarReportePerfil.resources
+C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Release\net5.0-windows\DCA_Practica1.Perfil.resources

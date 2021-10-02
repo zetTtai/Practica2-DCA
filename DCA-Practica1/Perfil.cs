@@ -18,6 +18,29 @@ namespace DCA_Practica1
             textNombre.Text = Program.usuarioActual.nombre;
             textEmail.Text = Program.usuarioActual.email;
             textPassword.Text = Program.usuarioActual.password;
+
+            dataGridViewReportes.ColumnCount = 5;
+            dataGridViewReportes.Columns[0].Name = "ID";
+            dataGridViewReportes.Columns[1].Name = "Título";
+            dataGridViewReportes.Columns[2].Name = "Estado";
+            dataGridViewReportes.Columns[3].Name = "Tipo";
+            dataGridViewReportes.Columns[4].Name = "Gravedad";
+
+            foreach (Reporte reporte in Program.usuarioActual.reportes)
+            {
+                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.estado.ToString(), reporte.tipo.ToString(), reporte.error.ToString() };
+                dataGridViewReportes.Rows.Add(row);
+            }
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "";
+            btn.Text = "Mostrar";
+            btn.UseColumnTextForButtonValue = true;
+            dataGridViewReportes.Columns.Add(btn);
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "";
+            editar.Text = "Editar";
+            editar.UseColumnTextForButtonValue = true;
+            dataGridViewReportes.Columns.Add(editar);
         }
 
         private void pictureLogo_Click(object sender, EventArgs e)
@@ -62,29 +85,6 @@ namespace DCA_Practica1
                 labelNombre.Text = "Este campo no puede estar vacío";
             return false;
         }
-        private bool checkEmail()
-        {
-            // Comprobamos que 'Email' NO está vacío.
-            if (textEmail.Text != "")
-            {
-                try
-                {
-                    var addr = new System.Net.Mail.MailAddress(textEmail.Text);
-                    if (addr.Address == textEmail.Text)
-                    {
-                        labelEmail.Text = " ";
-                        return true;
-                    }
-                }
-                catch
-                {
-                    labelEmail.Text = "No es un correo electrónico válido\n(nombre@gmail.com)";
-                }
-            }
-            else
-                labelEmail.Text = "Este campo no puede estar vacío";
-            return false;
-        }
         private bool checkPassword()
         {
             // Comprobamos que 'contraseña' NO está vacío.
@@ -121,10 +121,9 @@ namespace DCA_Practica1
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
             bool nombreOK = checkNombre();
-            bool emailOK = checkEmail();
             bool passwordOK = checkPassword();
 
-            if (nombreOK && emailOK && passwordOK)
+            if (nombreOK && passwordOK)
             {
                 // Actualizamos al usuario a nuestra lista de usuarios registrados
                 // Usuario usuario = new Usuario(textNombre.Text, textEmail.Text, textPassword.Text);
@@ -134,7 +133,6 @@ namespace DCA_Practica1
                     if(usuario.id == Program.usuarioActual.id)
                     {
                         usuario.nombre = textNombre.Text;
-                        usuario.email = textEmail.Text;
                         usuario.password = textPassword.Text;
                         Program.usuarioActual = usuario;
                         break;
@@ -143,6 +141,31 @@ namespace DCA_Practica1
                 Perfil home = new Perfil();
                 this.Hide();
                 home.Show();
+            }
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            Inicio inicio = new Inicio();
+            inicio.Show();
+            this.Hide();
+        }
+
+        private void dataGridViewReportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                // MessageBox.Show("Mostrar");
+                DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
+                MostrarReporte mostrarReporte = new MostrarReporte(Convert.ToInt64(row.Cells[0].Value));
+                mostrarReporte.ShowDialog();
+            }
+            else if (e.ColumnIndex == 6)
+            {
+                // MessageBox.Show("Editar");
+                DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
+                EditarReportePerfil editarReporte = new EditarReportePerfil(Convert.ToInt64(row.Cells[0].Value));
+                editarReporte.ShowDialog();
             }
         }
     }

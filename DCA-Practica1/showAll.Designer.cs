@@ -34,7 +34,6 @@ namespace DCA_Practica1
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewReportes = new System.Windows.Forms.DataGridView();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.textBoxTitulo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -104,21 +103,10 @@ namespace DCA_Practica1
             this.dataGridViewReportes.TabIndex = 5;
             this.dataGridViewReportes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRefresh.Location = new System.Drawing.Point(11, 142);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(94, 29);
-            this.buttonRefresh.TabIndex = 6;
-            this.buttonRefresh.Text = "Refrescar";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
             // buttonBuscar
             // 
             this.buttonBuscar.Cursor = System.Windows.Forms.Cursors.No;
-            this.buttonBuscar.Location = new System.Drawing.Point(111, 142);
+            this.buttonBuscar.Location = new System.Drawing.Point(11, 142);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 7;
@@ -127,7 +115,7 @@ namespace DCA_Practica1
             // 
             // textBoxTitulo
             // 
-            this.textBoxTitulo.Location = new System.Drawing.Point(201, 143);
+            this.textBoxTitulo.Location = new System.Drawing.Point(101, 143);
             this.textBoxTitulo.Name = "textBoxTitulo";
             this.textBoxTitulo.Size = new System.Drawing.Size(249, 27);
             this.textBoxTitulo.TabIndex = 8;
@@ -139,11 +127,14 @@ namespace DCA_Practica1
             this.ClientSize = new System.Drawing.Size(776, 450);
             this.Controls.Add(this.textBoxTitulo);
             this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.dataGridViewReportes);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "showAll";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Hunter";
+            this.Load += new System.EventHandler(this.showAll_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
@@ -160,7 +151,6 @@ namespace DCA_Practica1
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewReportes;
-        private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.TextBox textBoxTitulo;
     }

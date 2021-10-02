@@ -16,38 +16,6 @@ namespace DCA_Practica1
         {
             InitializeComponent();
 
-            dataGridViewReportes.ColumnCount = 5;
-            dataGridViewReportes.Columns[0].Name = "ID";
-            dataGridViewReportes.Columns[1].Name = "Título";
-            dataGridViewReportes.Columns[2].Name = "Estado";
-            dataGridViewReportes.Columns[3].Name = "Tipo";
-            dataGridViewReportes.Columns[4].Name = "Gravedad";
-
-            foreach (Reporte reporte in Program.reportesRegistrados)
-            {
-                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.estado.ToString(), reporte.tipo.ToString(), reporte.error.ToString()};
-                dataGridViewReportes.Rows.Add(row);
-            }
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.HeaderText = "";
-            btn.Text = "Mostrar";
-            btn.UseColumnTextForButtonValue = true;
-            dataGridViewReportes.Columns.Add(btn);
-            if(Program.usuarioActual.admin)
-            {
-                DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
-                editar.HeaderText = "";
-                editar.Text = "Editar";
-                editar.UseColumnTextForButtonValue = true;
-                dataGridViewReportes.Columns.Add(editar);
-
-                DataGridViewButtonColumn borrar = new DataGridViewButtonColumn();
-                borrar.HeaderText = "";
-                borrar.Text = "Borrar";
-                borrar.UseColumnTextForButtonValue = true;
-                dataGridViewReportes.Columns.Add(borrar);
-            }
-
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -78,6 +46,7 @@ namespace DCA_Practica1
                 // MessageBox.Show("Editar");
                 DataGridViewRow row = dataGridViewReportes.Rows[e.RowIndex];
                 EditarReporte editarReporte  = new EditarReporte(Convert.ToInt64(row.Cells[0].Value));
+                editarReporte.Refrescar += Frescura;
                 editarReporte.ShowDialog();
             }
             else if(e.ColumnIndex == 7)
@@ -98,9 +67,49 @@ namespace DCA_Practica1
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            showAll show = new showAll();
-            show.Show();
-            this.Hide();
+            this.showAll_Load(sender, e);
+        }
+
+        public void Frescura()
+        {
+            this.showAll_Load(null, null);
+        }
+
+        private void showAll_Load(object sender, EventArgs e)
+        {
+            dataGridViewReportes.Rows.Clear();
+
+            dataGridViewReportes.ColumnCount = 5;
+            dataGridViewReportes.Columns[0].Name = "ID";
+            dataGridViewReportes.Columns[1].Name = "Título";
+            dataGridViewReportes.Columns[2].Name = "Estado";
+            dataGridViewReportes.Columns[3].Name = "Tipo";
+            dataGridViewReportes.Columns[4].Name = "Gravedad";
+
+            foreach (Reporte reporte in Program.reportesRegistrados)
+            {
+                string[] row = new string[] { reporte.id.ToString(), reporte.nombre, reporte.estado.ToString(), reporte.tipo.ToString(), reporte.error.ToString() };
+                dataGridViewReportes.Rows.Add(row);
+            }
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "";
+            btn.Text = "Mostrar";
+            btn.UseColumnTextForButtonValue = true;
+            dataGridViewReportes.Columns.Add(btn);
+            if (Program.usuarioActual.admin)
+            {
+                DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+                editar.HeaderText = "";
+                editar.Text = "Editar";
+                editar.UseColumnTextForButtonValue = true;
+                dataGridViewReportes.Columns.Add(editar);
+
+                DataGridViewButtonColumn borrar = new DataGridViewButtonColumn();
+                borrar.HeaderText = "";
+                borrar.Text = "Borrar";
+                borrar.UseColumnTextForButtonValue = true;
+                dataGridViewReportes.Columns.Add(borrar);
+            }
         }
     }
 }

@@ -36,5 +36,25 @@ namespace DCA_Practica1
         {
 
         }
+
+        private void MostrarReporte_Load(object sender, EventArgs e)
+        {
+            Label aux = new Label
+            {
+                Text = "Hola mundo",
+                Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
+                AutoSize = true,
+                Location = new Point(10, 25 * panelComentarios.Controls.Count)
+            };
+            panelComentarios.Controls.Add(aux);
+            Label aux2 = new Label
+            {
+                Text = "Mundo: hola",
+                Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
+                AutoSize = true,
+                Location = new Point(10, 25 * panelComentarios.Controls.Count)
+            };
+            panelComentarios.Controls.Add(aux2);
+        }
     }
 }

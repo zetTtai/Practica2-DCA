@@ -284,7 +284,10 @@ namespace DCA_Practica1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Hunter";
             this.Load += new System.EventHandler(this.Registro_Load);
             this.panel1.ResumeLayout(false);

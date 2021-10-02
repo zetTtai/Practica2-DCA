@@ -177,7 +177,10 @@ namespace DCA_Practica1
             this.Controls.Add(this.pictureCuenta);
             this.Controls.Add(this.pictureBuscar);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Hunter";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

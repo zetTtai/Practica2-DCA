@@ -70,6 +70,14 @@ namespace DCA_Practica1
                     var addr = new System.Net.Mail.MailAddress(textEmail.Text);
                     if (addr.Address == textEmail.Text)
                     {
+                        foreach(Usuario usuario in Program.usuariosRegistrados)
+                        {
+                            if(usuario.email == textEmail.Text)
+                            {
+                                labelEmail.Text = "Correo electrónico no disponible";
+                                return false;
+                            }
+                        }
                         labelEmail.Text = " ";
                         return true;
                     }            
