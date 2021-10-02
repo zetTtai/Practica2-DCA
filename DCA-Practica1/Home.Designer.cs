@@ -104,7 +104,7 @@ namespace DCA_Practica1
             // 
             // pictureCuenta
             // 
-            this.pictureCuenta.Cursor = System.Windows.Forms.Cursors.No;
+            this.pictureCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureCuenta.Image = global::DCA_Practica1.Properties.Resources.user;
             this.pictureCuenta.Location = new System.Drawing.Point(561, 169);
             this.pictureCuenta.Name = "pictureCuenta";

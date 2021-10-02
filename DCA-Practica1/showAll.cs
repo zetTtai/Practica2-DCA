@@ -87,6 +87,7 @@ namespace DCA_Practica1
                 {
                     if (reporte.id == Convert.ToInt64(row.Cells[0].Value))
                     {
+                        reporte.reportador.reportes.Remove(reporte);
                         Program.reportesRegistrados.Remove(reporte);
                         dataGridViewReportes.Rows.RemoveAt(e.RowIndex);
                         break;

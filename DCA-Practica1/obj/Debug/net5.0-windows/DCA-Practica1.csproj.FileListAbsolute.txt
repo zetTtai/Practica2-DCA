@@ -23,3 +23,4 @@ C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Debug\net5.0-wind
 C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Debug\net5.0-windows\DCA_Practica1.showAll.resources
 C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Debug\net5.0-windows\DCA_Practica1.MostrarReporte.resources
 C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Debug\net5.0-windows\DCA_Practica1.EditarReporte.resources
+C:\Users\IronDark\source\repos\DCA-Practica1\DCA-Practica1\obj\Debug\net5.0-windows\DCA_Practica1.Perfil.resources

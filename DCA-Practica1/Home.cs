@@ -55,7 +55,9 @@ namespace DCA_Practica1
 
         private void pictureCuenta_Click(object sender, EventArgs e)
         {
-
+            Perfil perfil = new Perfil();
+            perfil.Show();
+            this.Hide();
         }
     }
 }
