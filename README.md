@@ -1,5 +1,7 @@
-# **Practica1 - ADI**
+# **Practica2 - DCA**
 ## **Bug Hunter** 
+
+Realizada por: Raúl Beltrán Marco
 
 Una aplicación de escritorio con interfaz de usuario desarrollada con C# + Windows Form.
 
